@@ -17,5 +17,14 @@ public class WordMatch{
         return score;
 
     }
+
+    public String findBetterGuess(String guess1, String guess2){
+        int score1 = this.scoreGuess(guess1);
+        int score2 = this.scoreGuess(guess2);
+        if(score1 > score2) return guess1;
+        if(score2 > score1) return guess2;
+        if(guess1.compareTo(guess2) > 0) return guess1;
+        return guess2;
+    }
     
 }
